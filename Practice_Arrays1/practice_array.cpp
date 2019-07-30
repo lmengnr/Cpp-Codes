@@ -18,9 +18,9 @@ int main()
     for (int i : arr) 
     {
         cout << i << endl;
-    };
+    }
 
-    cout << "Printing a 2D Array \n" << endl;
+    cout << "Printing a 2D Array " << endl;
     int arr2[2][3] = { {1, 2, 3}, {4, 5, 6} };
 
     for (int i = 0; i<2; ++i)
@@ -29,8 +29,8 @@ int main()
         {
             cout << arr2[i][n] << " " ;
         }
-        cout << "" << endl;
-    };
+        cout <<  endl;
+    }
 
 
     return 0;
