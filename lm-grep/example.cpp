@@ -23,10 +23,20 @@ bool iterateFile(std::string fileName, std::function<void (const std::string & )
  
 	std::string str;
 	// Read the next line from File untill it reaches the end.
+
+	
+
 	while (std::getline(in, str))		// getline takes characters from 'in' and stores them in 'str'
 	{
 		// Call the given callback
-		callback(str);
+		//callback(str);
+
+		std::size_t found = str.find("void");
+		
+		if(found!=std::string::npos)
+		{
+		std::cout << str << std::endl;
+		} 
 	}
 	//Close The File
 	in.close();
@@ -34,19 +44,35 @@ bool iterateFile(std::string fileName, std::function<void (const std::string & )
 }
  
  
-int main()
+int main(int argc, char* argv[])
 {
+
+	// Check the number of parameters
+    if (argc < 3) {
+        // Tell the user how to run the program
+        std::cerr << "Usage: " << argv[0] << "File NAME: " << "Word to find: " << std::endl;
+        /* "Usage messages" are a conventional way of telling the user
+         * how to run a program if they enter the command incorrectly.
+         */
+        return 1;
+    }
+
+
+	std::cout << argv[0] << "says hello, " << argv[1] << ", Did you enjoy the " << argv[2] << std::endl;
+    return 0;
+
 	std::vector<std::string> vecOfStr;
  
 	//Call given lambda function for each line in file
-	bool res = iterateFile("example.cpp", [&](const std::string & str){
+	bool res = iterateFile("iliad.mb.txt", [&](const std::string & str){
 												// Add to vector
 												vecOfStr.push_back(str);
 											});
  
-	if(res)
-	{
-		for(std::string & line : vecOfStr)
-			std::cout<<line<<std::endl;
-	}
+	//if(res)
+	//{
+	//	for(std::string & line : vecOfStr)
+	//		std::cout<<line<<std::endl;
+	//}
+
 }
