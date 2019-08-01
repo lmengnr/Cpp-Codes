@@ -23,7 +23,7 @@ bool iterateFile(std::string fileName, std::function<void (const std::string & )
  
 	std::string str;
 	// Read the next line from File untill it reaches the end.
-	while (std::getline(in, str))
+	while (std::getline(in, str))		// getline takes characters from 'in' and stores them in 'str'
 	{
 		// Call the given callback
 		callback(str);
