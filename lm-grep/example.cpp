@@ -22,7 +22,7 @@ bool iterateFile(std::string fileName, std::string tofind, std::function<void(co
 	}
 
 	std::string str;
-	
+
 	// Read the next line from File untill it reaches the end.
 
 	while (std::getline(in, str)) // getline takes characters from 'in' and stores them in 'str'
@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
 	if (argc < 3)
 	{
 		// Tell the user how to run the program
-		std::cerr << "Usage: " << argv[0] << " File NAME: "
-				  << " Word to find: " << std::endl;
+		std::cerr << "Usage: " << argv[0] << " [FILE NAME] "
+				  << "[TARGET STRING] " << std::endl;
 		/* "Usage messages" are a conventional way of telling the user
          * how to run a program if they enter the command incorrectly.
          */
