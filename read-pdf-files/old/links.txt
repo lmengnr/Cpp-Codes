@@ -1,0 +1,5 @@
+Links:
+
+https://gist.github.com/vivithemage/9517678
+
+https://stackoverflow.com/questions/31051317/how-to-get-file-names-vs-directory-names-in-c-using-boost-filesystem-library
